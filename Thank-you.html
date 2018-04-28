@@ -1,0 +1,119 @@
+<!-- 
+DEVELOPER
+
+SUDHANVA HUKKERI ===== 10383120
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>THANK YOU PAGE AND GMAP</title>
+
+  <link rel="stylesheet" href="css/elegant.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+  
+</head>
+
+<body class="text-center" id="">
+
+  <div class="d-flex align-items-center py-5 photo-overlay cover" style="background-image: url('images/Ticket booking.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="text-white p-5 bg-dark-opaque col-12 col-lg-8 mx-auto">
+          <h1 class="display-4" id="user_name"></h1>
+          <h2>YOU HAVE SELECTED</h2>
+          <h3 class="display-4" id="user_seats"></h3>
+          <h1>FOR THE MOVIE</h1>
+          <u><h1 class="display-3" id="movie_name"></h1></u>
+          <h1 class="display-4" id="movie_time"></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-white p-5 bg-dark-opaque col-12 col-lg-8 mx-auto">
+          <h1>SEE BELOW MAP FOR THEATER LOCATIONS IN DUBLIN, IRELAND </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div id="map" style="height: 550px; width: 90%;" >
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-1 bg-info text-warning">THANK YOU&nbsp;
+            <br>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+  
+  $(function(){
+
+    var mu_detail = localStorage.getItem("mu_details");
+
+    //console.log(mu_detail);
+    mu_detail = mu_detail.split("-");
+
+    
+    var u_name = mu_detail[0];
+    var u_NoSeats = mu_detail[1];
+    var u_seats = mu_detail[2]; 
+    var m_day = mu_detail[3];
+    var m_nam = mu_detail[4];
+    var m_time = mu_detail[5];
+
+
+    $('#user_name').append(u_name);
+    $('#user_seats').append(u_NoSeats + " Seats, " + u_seats);
+    $('#movie_name').append(m_nam);
+    $('#movie_time').append("on "+ m_day + " at " + m_time + "<br><br>ENJOY" );
+                                  
+  });
+  
+  function thrtMap() {
+        var thrtLoc = {lat: 53.344465, lng: -6.263045};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: thrtLoc
+        });
+        var marker = new google.maps.Marker({
+          position: thrtLoc,
+          map: map
+        });
+      }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABPT8SCxRm699INkgNY5-RcbZe_YrXGvQ&callback=thrtMap">
+  </script>
+
+</body>
+
+</html>

@@ -1,58 +1,112 @@
 
+
+var CACHENAME = 'Movie_PWA';
+var cacheFiles = [
+          './',
+		  './index.html',
+		  './js/app.js',
+		  './js/movie-list-display.js',
+		  './Movie-DateTime.html',
+		  './js/movie-day-time.js',
+		  './Book_Seats.html',
+		  './js/Select-Seats.js',
+          './Thank-you.html',
+		  './js/jquery-2.2.3.min.js',
+		  'https://college-movies.herokuapp.com/',
+  		  'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js',
+		  'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+		  'https://code.jquery.com/jquery-3.2.1.js',
+		  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
+		  './images/cover.jpg',
+          './images/cover2.jpg',
+          './images/cover3.jpg',
+          './images/movie1.jpg',
+          './images/movie2.jpg',
+          './images/movie3.jpg',
+          './images/movie4.jpg',
+          './images/movie5.jpg',
+          './images/movie6.jpg',
+          './images/movie7.jpg',
+          './images/movie8.jpg',
+          './images/movie9.jpg',
+          './images/movie10.jpg',
+          './images/Ticket booking.jpg',
+          './images/whiteBackGround.jpg',
+          './images/Movie-Big.jpg',
+          './css/elegant.css',
+          './css/style.css' 
+	];
+	
+	
+// DEVELOPER
+
+// SUDHANVA HUKKERI ===== 10383120
+
+
 //	Installing the Service Worker 
-self.addEventListener('install', function(event) { 
-	console.log('[Service Worker] Installing Service Worker...', event);
-	event.waitUntil(
-		caches.open('static')  // Saving the files in cache for offline usage
-			.then(function(cache){
-				console.log('[Service Worker] Precaching App Shell');
-				cache.addAll([
-					'/',
-					'index.html',
-					'Movie-DateTime.html',
-					//'theatre_view.html',
-					'js/app.js',
-					'js/movie-day-time.js',
-					'js/movie-list-display.js',
-					'js/jquery-2.2.3.min',
-					'movie.json',
-					'images/Movie-Small.jpg',
-					'images/Movie-Big.jpg',
-					'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-					'https://fonts.googleapis.com/icon?family=Material+Icons',
-					'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js',
-					'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-					'https://college-movies.herokuapp.com/',
-					'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
-					'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-					'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
-					'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
-					'https://fonts.googleapis.com/css?family=Montserrat',
-					'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-					'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i',
 
-
-				]);
-			})
-	)
+self.addEventListener('install', function(event) {
+		console.log('[ServiceWorker] Install event.');
+		event.waitUntil(
+				caches.open(CACHENAME).then(function(cache) {
+						console.log('[ServiceWorker] Caching app shell...');
+						cacheFiles.forEach(function (cfile) {
+							cache.add(cfile).catch();
+						  });
+						// return cache.addAll(cacheFiles).then(function() {
+						// 		self.skipWaiting();
+						// });
+				})
+		);
 });
 
-//  Activating the Service Worker
-self.addEventListener('activate', function(event) { 
-	console.log('[Service Worker] Activating Service Worker...', event);
-	return self.clients.claim();
+
+self.addEventListener('activate', function(event) {
+		console.log('[ServiceWorker] Activate event.');
+		evente.waitUntil(
+				caches.keys().then(function(keyList) {
+						return Promise.all(keyList.map(function(key) {
+								if (key !== CACHENAME) {
+										console.log('[ServiceWorker] Removing old cache......', key);
+										return caches.delete(key);
+								}
+						}));
+				})
+		);
+		return self.clients.claim();
 });
 
-// Fetching the file resources using the Fetch Api
-self.addEventListener('fetch', function(event) { 
-	event.respondWith(
-		caches.match(event.request)
-			.then(function(response){
-				if(response){
-					return response;
-				}else{
-					return fetch(event.response);
-				}
-			})
-	);
+self.addEventListener('fetch', function(event) {
+		console.log('[ServiceWorker] Fetch event...', event.request.url);
+		event.respondWith(
+				caches.match(event.request).then(function(response) {
+						if (response) {
+								console.log('[ServiceWorker] Fetching from cache...');
+								return response;
+						}
+						// else {
+						// 	console.log('[ServiceWorker] Fetching from URL...');
+						// 	return fetch(event.request)     //fetch from internet
+						// 	  .then(function(res) {
+						// 		return caches.open(CACHE_DYNAMIC_NAME)
+						// 		  .then(function(cache) {
+						// 			cache.put(event.request.url, res.clone());    //save the response for future
+						// 			return res;   // return the fetched data
+						// 		  })
+						// 	  })
+						// 	  .catch(function(err) {       // fallback mechanism
+						// 		return caches.open(CACHE_CONTAINING_ERROR_MESSAGES)
+						// 		  .then(function(cache) {
+						// 			return cache.match('/index.html');
+						// 		  });
+						// 	  });
+						//   }
+
+							console.log('[ServiceWorker] Fetching from URL...');
+						
+						return fetch(event.request).catch(function(event){
+								console.log('[ServiceWorker] Fetch request failed!');
+						});
+				})
+		);
 });

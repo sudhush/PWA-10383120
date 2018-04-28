@@ -1,92 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" 
-				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<!-- Compatalble for Internet Explorer Edge -->
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title>Book Movie Show Prograssive Web Template </title>
-	
-	<link rel="manifest" href="/manifest.json">
+<html>
 
-	<!-- Referenced Stylesheets -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 
+DEVELOPER
 
-	<style>
-		body,h1,h2,h3,h4,h5 {font-family: "EB Garamond", sans-serif}
-		.w3-quarter img{margin-bottom: -6px; cursor: pointer; align-items: center}
-		.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
-		.pointer {cursor: pointer;}
-		.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
-		.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
-		.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
-		.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
-		.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
-		.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
-		.w3-xlarge{font-size:24px!important}
-		.w3-left{float:left!important}.w3-right{float:right!important}
-		.w3-padding{padding:8px 16px!important}
-		.w3-content{max-width:980px;margin:auto}.w3-rest{overflow:hidden}
-		.w3-main,#main{transition:margin-left .4s}
-		.w3-grayscale-min{filter:grayscale(50%)}
-		.w3-quarter{float:left;width:100%}
-		.w3-quarter{width:24.99999%}
-		.w3-center{text-align:center!important}
-	</style>
+SUDHANVA HUKKERI ===== 10383120
+
+ -->
+
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <!-- Compatalble for Internet Explorer Edge -->
+  <link rel="manifest" href="./manifest.json">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Book Movie Show Prograssive Web Template </title>
+  
+  <link rel="stylesheet" href="./css/elegant.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 </head>
-	
-<bod >
 
-	<header class="w3-container w3-top w3-grey w3-xlarge w3-padding-16 ">
-			<div class="header logo text">
-					<span class="w3-left w3-padding" ><h1 align="center">My Movie Booking PWA</h1></span>	
-			</div>
-	</header>
-
-	
-	<!-- !PAGE CONTENT! -->
-		<div class="w3-main w3-content logo text text-center " style="max-width:1600px;margin-top:83px"></div>
-					<br><h2>Select the Movie for Booking</h2>
-		</div>
-	   
-		<div class="container text-center">
-		  	<h1>Cinema-List</h1>
-			
-		</div>
-		<!--	
-		<div class="cinema-chain-grids bg-3 text-center">
-			<ul id ="MovieTitles" class = "movies-display"></ul>
-
-			<div class="clearfix"></div>
-		</div>
-		
-		-->  
-
-
-		<div class="w3-row w3-grayscale-min">
-			<div class="w3-quarter"></div>
-				<ul id ="MovieTitles" class = "movies-display"></ul>
-			<div class="clearfix"></div>
-			</div>
-			
-		
-	<!--
-	<footer class="container-fluid text-center">
-		<p>Footer Text</p>
-	</footer> -->
-	
-
-	<!-- Referenced Scripts -->
-	<script src="js/app.js"></script>
-	<script defer src="js/movie-list-display.js"></script>
-	
+<body class="text-center">
+  <div class="d-flex align-items-center py-5 photo-overlay cover" style="background-image: url(&quot;images/cover.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+        <div class="text-white p-5 bg-dark-opaque col-12 col-lg-8 mx-auto">
+          <h1 class="display-3">BOOK YOUR MOVIES</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5"></div>
+  <div class="" id="speakers">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="mb-4 ">LIST OF MOVIES</h1>
+        </div>
+      </div>
+      <div class="row" id ="MovieTitles">
+          
+      </div>
+    </div>
+  </div>
+  <div class="py-5"></div>
+  
+  <!-- JavaScript dependencies -->
+  <script src="./js/app.js"></script>
+  <script src="./js/movie-list-display.js"></script>
+  
 </body>
+
 </html>

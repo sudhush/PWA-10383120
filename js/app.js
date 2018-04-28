@@ -1,13 +1,17 @@
+
+// DEVELOPER
+
+// SUDHANVA HUKKERI ===== 10383120
+
+
 $(function(){
 	
-	// Checking if Service Worker is supported by the Browser
-
 	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+		navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
 		console.log('ServiceWorker registration successful with scope: ', registration.scope);
 	  }).catch(function(err) {
-		//registration failed :(
-		console.log('ServiceWorker registration failed: ', err);
+
+			console.log('ServiceWorker registration failed: ', err);
 	  });
 	}else {
 	  console.log('No service-worker on this browser');

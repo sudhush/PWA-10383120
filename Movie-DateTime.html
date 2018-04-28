@@ -1,155 +1,125 @@
-<!DOCTYPE html>   
-<html lang="en">
+<!-- 
+DEVELOPER
+
+SUDHANVA HUKKERI ===== 10383120
+ -->
+
+<!DOCTYPE html>
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- Compatalble for Internet Explorer Edge -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- Compatalble for Internet Explorer Edge -->
+  <link rel="manifest" href="/manifest.json">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title>Movie Date and Time</title>
-
-    
-    <!-- Referenced Stylesheets -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: "EB Garamond", sans-serif}
-     	.w3-quarter img{margin-bottom: -6px; cursor: pointer; align-items: center}
-		.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
-		.pointer {cursor: pointer;}
-		.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
-		.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
-		.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
-		.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
-		.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
-		.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
-		.w3-xlarge{font-size:24px!important}
-		.w3-left{float:left!important}.w3-right{float:right!important}
-		.w3-padding{padding:8px 16px!important}
-		.w3-content{max-width:980px;margin:auto}.w3-rest{overflow:hidden}
-		.w3-main,#main{transition:margin-left .4s}
-		.w3-grayscale-min{filter:grayscale(50%)}
-		.w3-quarter{float:left;width:100%}
-		.w3-quarter{width:24.99999%}
-        .w3-center{text-align:center!important}
-        .w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
-        .w3-hide-medium{display:none!important}
-        .w3-hide-small{display:none!important}
-        .w3-padding-large{padding:12px 24px!important}
-	</style>
+  <title>Book Movie Show Prograssive Web Template </title>
+  
+  <link rel="stylesheet" href="css/elegant.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-
-
-    	<!--+++++++++++++++++++++++++++++++++++++++NEW CODE++++++++++++++++++++++++++++++++++++-->
-        <!-- Add Google Maps -->
-        <!-- <script>
-        function myMap()
-        {
-            myCenter=new google.maps.LatLng(41.878114, -87.629798);
-            var mapOptions= {
-            center:myCenter,
-            zoom:12, scrollwheel: false, draggable: false,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-        
-            var marker = new google.maps.Marker({
-            position: myCenter,
-            });
-            marker.setMap(map);
-        }
-        
-        // Open and close sidebar
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "60%";
-            document.getElementById("mySidebar").style.display = "block";
-        }
-        
-        function closeNav() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-         -->
-        
-        <!--
-        To use this code on your website, get a free API key from Google.
-        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-        -->
-
-	
-	<!--+++++++++++++++++++++++++++++++++++++++NEW CODE++++++++++++++++++++++++++++++++++++-->
-	
-
-    <header class="w3-container w3-top w3-grey w3-xlarge w3-padding-16 ">
-        <div class="header logo text">
-                <span class="w3-left w3-padding" ><h1 align="center">My Movie Booking PWA</h1></span>	
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="display-3 text-center text-warning border-warning">SELECTED MOVIE</h3>
         </div>
-        <br><br>
-        <div><span><h4 align="center">Select time for Movie Booking</h4></span>
-        </div>
-    </header>
-    <br><br><br><br><br><br><br>
-    <div class="container-fluid text-center">    
-        <div class="row content">
-            <div class="col-md-4 sidenav ">
-                <ul id ="MovieDetails" class = "movie-details"></ul>
-
-            </div>
-         
-            <br><br><br>
-            <!-- <div---- class="row-sm-1">||<p>||</p><p>||</p><p>||</p><p>||</p><p>||</p><p>||</p></div> -->
-            <div class="col-md-1 text-center"> 
-                <h4>Monday</h4>
-                <p class="text-center" id = "mon"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Tuesday</h4>
-                <p class="text-center" id = "tue"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Wednesday</h4>
-                <p class="text-center" id = "wed"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Thursday</h4>
-                <p class="text-center" id = "thu"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Friday</h4>
-                <p class="text-center" id = "fri"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Saturday</h4>
-                <p class="text-center" id = "sat"></p>
-            </div>
-            
-            <div class="col-md-1 text-center"> 
-                <h4>Sunday</h4>
-                <p class="text-center" id = "sun"></p>
-            </div>
-            
-        </div>
-               
+      </div>
     </div>
-        
-<!-- Referenced Scripts -->
-<script defer src="js/movie-day-time.js"></script>
+  </div>
+  <div class="bg-dark py-5" style="background-image: url(&quot;images/cover2.jpg&quot;);">
+    <div class="container">
+      <div class="row my-5 animate-in-down" id="MovieSelected">
 
+      </div>
+    </div>
+  </div>
+  <div class="py-5" id="schedule" style="background-image: url(&quot;images/cover3.jpg&quot;);">
+    <div class="container animate-in-down">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center display-4 text-success">SCHEDULE</h3>
+        </div>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="p-4 col-sm-2 col-md-3">
+          <h2 class="" >MONDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id="mon">
+              
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 col-sm-2 col-md-3">
+          <h2 class="" >TUESDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "tue">
+             
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 col-sm-2 col-md-3">
+          <h2 class="" >WEDNESDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "wed">
+ 
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 col-sm-2 col-md-3">
+          <h2 class="" >THURSDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "thu">
+      
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="col-sm-2 col-md-3">
+          <h2 class="" >FRIDAY <br></h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "fri">
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-2 col-md-3">
+          <h2 class="" >SATURDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "sat">
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-2 col-md-3">
+          <h2 class="" >SUNDAY <br> </h2>
+          <div class="card p-3">
+            <ul class="list-group list-group-flush" id = "sun">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-5 text-center photo-overlay" style="background-image: url(&quot;images/cover2.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12"></div>
+      </div>
+    </div>
+  </div>
+  <script defer="" src="js/movie-day-time.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
 </body>
+
 </html>
